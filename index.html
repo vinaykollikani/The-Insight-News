@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<!-- ! Poppins Google Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- ! Title -->
+		<title>The Insight News</title>
+	</head>
+
+	<body>
+		<!-- ! HEADER -->
+		<header>
+			<!--! Navigation Bar -->
+			<nav>
+				<div class="container nav-bar flex-between">
+					<!-- ! Menu Icon -->
+					<div class="menu-btn">
+						<i class="fa-solid fa-bars"></i>
+					</div>
+					<!-- ! Company Logo -->
+					<div class="nav-logo flex-center">
+						<img src="NewsLogo.png" alt="" />
+					</div>
+					<!-- ! Nav items -->
+					<div class="nav-items flex-center">
+						<a
+							href="#"
+							class="hover-link nav-item"
+							onclick="onNavItemClick('politics')"
+							id="politics"
+							>Politics</a
+						>
+						<a
+							href="#"
+							class="hover-link nav-item"
+							onclick="onNavItemClick('sports')"
+							id="sports"
+							>Sports</a
+						>
+						<a
+							href="#"
+							class="hover-link nav-item"
+							onclick="onNavItemClick('science')"
+							id="science"
+							>Science</a
+						>
+						<a
+							href="#"
+							class="hover-link nav-item"
+							onclick="onNavItemClick('technology')"
+							id="technology"
+							>Technology</a
+						>
+						<a
+							href="#"
+							class="hover-link nav-item"
+							onclick="onNavItemClick('entertainment')"
+							id="entertainment"
+							>Entertainment</a
+						>
+					</div>
+					<!-- ! Search Input -->
+					<div class="search-container search">
+						<form action="#" autocomplete="off">
+							<input
+								type="text"
+								name="text"
+								class="input"
+								placeholder="Search..."
+								value=""
+								id="input-text-one"
+							/>
+							<i
+								class="fa-solid fa-magnifying-glass icon"
+								id="search-icon-one"
+							></i>
+						</form>
+					</div>
+					<!-- ! Search Icon -->
+					<div class="search-icon">
+						<i
+							class="fa-solid fa-magnifying-glass icon active"
+							id="search-icon-two"
+						></i>
+					</div>
+					<!-- ! Close Search Bar Icon -->
+					<div class="search-close">
+						<i class="fa-solid fa-x"></i>
+					</div>
+				</div>
+				<!-- ! Search Bar -->
+				<div class="search-bar">
+					<div class="search-container search">
+						<form
+							action="#"
+							autocomplete="off"
+							autocapitalize="onclick"
+						>
+							<input
+								type="text"
+								name="text"
+								class="input"
+								placeholder="Search..."
+								id="input-text-two"
+							/>
+							<i
+								class="fa-solid fa-magnifying-glass icon"
+								id="search-icon-three"
+							></i>
+						</form>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- ! MAIN -->
+		<main>
+			<div
+				class="container hero-section flex-between"
+				id="cards-container"
+			>
+				<!-- ! Skeleton card -->
+				<div class="skeleton-card active">
+					<div class="card">
+						<div class="image"></div>
+						<div class="news-text-section">
+							<div class="news-title"></div>
+							<div class="news-author"></div>
+							<div class="news-desc"></div>
+						</div>
+					</div>
+				</div>
+				<!-- ! Skeleton card -->
+				<div class="skeleton-card active">
+					<div class="card">
+						<div class="image"></div>
+						<div class="news-text-section">
+							<div class="news-title"></div>
+							<div class="news-author"></div>
+							<div class="news-desc"></div>
+						</div>
+					</div>
+				</div>
+				<!-- ! Skeleton card -->
+				<div class="skeleton-card active">
+					<div class="card">
+						<div class="image"></div>
+						<div class="news-text-section">
+							<div class="news-title"></div>
+							<div class="news-author"></div>
+							<div class="news-desc"></div>
+						</div>
+					</div>
+				</div>
+				<!-- ! Skeleton card -->
+				<div class="skeleton-card active">
+					<div class="card">
+						<div class="image"></div>
+						<div class="news-text-section">
+							<div class="news-title"></div>
+							<div class="news-author"></div>
+							<div class="news-desc"></div>
+						</div>
+					</div>
+				</div>
+				<!-- ! Skeleton card -->
+				<div class="skeleton-card active">
+					<div class="card">
+						<div class="image"></div>
+						<div class="news-text-section">
+							<div class="news-title"></div>
+							<div class="news-author"></div>
+							<div class="news-desc"></div>
+						</div>
+					</div>
+				</div>
+				<!-- ! Skeleton card -->
+				<div class="skeleton-card active">
+					<div class="card">
+						<div class="image"></div>
+						<div class="news-text-section">
+							<div class="news-title"></div>
+							<div class="news-author"></div>
+							<div class="news-desc"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- ! Full Screen Menu -->
+		<div class="menu">
+			<div class="exit-icon">
+				<i class="fa-solid fa-x"></i>
+			</div>
+			<div class="nav-items flex-center">
+				<a
+					href="#"
+					class="hover-link menu-nav"
+					onclick="onMenuItemClick('politics')"
+					>Politics</a
+				>
+				<a
+					href="#"
+					class="hover-link menu-nav"
+					onclick="onMenuItemClick('sports')"
+					>Sports</a
+				>
+				<a
+					href="#"
+					class="hover-link menu-nav"
+					onclick="onMenuItemClick('science')"
+					>Science</a
+				>
+				<a
+					href="#"
+					class="hover-link menu-nav"
+					onclick="onMenuItemClick('technology')"
+					>Technology</a
+				>
+				<a
+					href="#"
+					class="hover-link menu-nav"
+					onclick="onMenuItemClick('entertainment')"
+					>Entertainment</a
+				>
+				<a
+					href="#"
+					class="hover-link menu-nav"
+					onclick="onMenuItemClick('business')"
+					>Business</a
+				>
+				<a
+					href="#"
+					class="hover-link menu-nav"
+					onclick="onMenuItemClick('unitedNations')"
+					>United Nations</a
+				>
+				<a
+					href="#"
+					class="hover-link menu-nav"
+					onclick="onMenuItemClick('health')"
+					>Health</a
+				>
+			</div>
+		</div>
+
+		<!-- ! Card template -->
+		<template class="news-card-template" id="news-card-template">
+			<!-- ! CARDS -->
+			<div class="card">
+				<!-- ! News Card Imag -->
+				<div class="image">
+					<img src="www.images.com" alt="" id="news-image" />
+				</div>
+				<div class="news-text-section">
+					<!-- ! News Title -->
+					<div class="news-title">
+						<h2 id="news-title"></h2>
+					</div>
+					<!-- ! Author and Date -->
+					<div class="news-author">
+						<p>
+							<span id="news-source"></span>
+							<span style="color: #fff">&#x2022;</span>
+							<span id="news-date"></span>
+						</p>
+					</div>
+					<!-- ! News Description -->
+					<div class="news-desc">
+						<p id="news-desc"></p>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<!-- ! FOOTER -->
+		<footer>
+			<div class="footer-container container">
+				<!-- ! Company Name -->
+				<div class="company flex">
+					<img src="NewsLogo.png" alt="The Insight News" />
+					<h3>The Insight News</h3>
+				</div>
+
+				<!-- ! Explore Section -->
+				<div class="explore flex">
+					<h3>Explore More</h3>
+					<div class="explore-menus flex">
+						<a href="#" id="business">Business</a>
+						<a href="#" id="world-news">World News</a>
+						<a href="#" id="cricket">Cricket</a>
+						<a href="#" id="football">Football</a>
+						<a href="#" id="health">Health</a>
+						<a href="#" id="united-nation">United Nation</a>
+					</div>
+				</div>
+
+				<!-- ! Contact Section -->
+				<div class="contact flex">
+					<h3>Get in Touch</h3>
+					<a href="#">contact@theinsightnews.com</a>
+					<div class="social-media">
+						<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+						<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+						<a href="#"><i class="fa-brands fa-instagram"></i></a>
+						<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+					</div>
+				</div>
+			</div>
+			<p class="copyright container">
+				© 2024 The Insight News. All Rights Reserved.
+			</p>
+		</footer>
+
+		<!-- ! JavaScript  -->
+		<script src="script.js"></script>
+		<!-- ! Font Awesome CDN -->
+		<script
+			src="https://kit.fontawesome.com/9b818b3dac.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
