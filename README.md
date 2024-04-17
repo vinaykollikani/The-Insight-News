@@ -1,8 +1,5 @@
-# The-Insight-News
+# The Insight News: A Simple News Website with newsAPI.org
 This repository contains the source code for The Insight News, a simple news website built with HTML, CSS, and JavaScript that fetches articles from the free and open-source newsAPI.org.
-## The Insight News: A Simple News Website with newsAPI.org
-
-This repository holds the source code for The Insight News, a news website built with HTML, CSS, and JavaScript. It leverages the free and open-source newsAPI.org to fetch and display news articles.
 
 **Features:**
 
