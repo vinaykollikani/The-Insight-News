@@ -16,54 +16,23 @@ const searchBar = document.querySelector(".search-bar");
 const inputTextOne = document.querySelector("#input-text-one");
 const inputTextTwo = document.querySelector("#input-text-two");
 const navLogo = document.querySelector(".nav-logo");
-
-// ! Events Declarations
-// ? Nav Logo
-navLogo.addEventListener("click", () => fetchNews("india"));
-// ? Menu Button
-menuBtn.addEventListener("click", () => {
-	menu.classList.toggle("active");
-});
-// ? Menu Exit Button
-exitIcon.addEventListener("click", () => {
-	menu.classList.toggle("active");
-});
-// ? Search Icon
-searchIconTwo.addEventListener("click", () => {
-	searchBar.classList.toggle("active");
-	searchIconTwo.classList.toggle("active");
-	closeSearchBar.classList.toggle("active");
-});
-// ? Close Search Bar
-searchIconThree.addEventListener("click", () => {
-	searchBar.classList.toggle("active");
-	searchIconTwo.classList.toggle("active");
-	closeSearchBar.classList.toggle("active");
-});
-closeSearchBar.addEventListener("click", () => {
-	searchIconTwo.classList.toggle("active");
-	searchBar.classList.toggle("active");
-	closeSearchBar.classList.toggle("active");
-});
-
+const alertBox = document.querySelector(".alert-window");
 // ! Fetch API Key
 
 window.addEventListener("load", () => fetchNews("India"));
 
 async function fetchNews(query) {
 	try {
-		// const response = await fetch(`${url}${query}&apiKey=${API_KEY1}`);
+		const response = await fetch(`${url}${query}&apiKey=${API_KEY1}`);
 		const data = await response.json();
-		console.log(data);
 		bindData(data.articles);
 	} catch (error) {
 		try {
 			const response = await fetch(`${url}${query}&apiKey=${API_KEY2}`);
 			const data = await response.json();
-			console.log(data);
 			bindData(data.articles);
 		} catch (error) {
-			alert("Sorry, ran out of API request limit.");
+			alertBox.classList.toggle("active");
 		}
 	}
 }
@@ -72,7 +41,9 @@ function bindData(articles) {
 	const cardsContainer = document.querySelector("#cards-container");
 	const newsCardsTemplate = document.querySelector("#news-card-template");
 
-	cardsContainer.innerHTML = "";
+	if (articles) {
+		cardsContainer.innerHTML = "";
+	}
 
 	articles.forEach((article) => {
 		if (!article.urlToImage) return;
@@ -108,6 +79,7 @@ searchIconOne.addEventListener("click", () => {
 	fetchNews(query);
 	console.log(query);
 	inputTextOne.value = "";
+	curSelectedNav?.classList.remove("active");
 });
 searchIconThree.addEventListener("click", () => {
 	const query = inputTextTwo.value;
@@ -129,4 +101,45 @@ function onNavItemClick(id) {
 function onMenuItemClick(id) {
 	fetchNews(id);
 	menu.classList.toggle("active");
+	curSelectedNav?.classList.remove("active");
+}
+
+function onFooterItemClick(query) {
+	fetchNews(query);
+	curSelectedNav?.classList.remove("active");
+}
+
+// ! Events Declarations
+// ? Nav Logo
+navLogo.addEventListener("click", () => fetchNews("india"));
+// ? Menu Button
+menuBtn.addEventListener("click", () => {
+	menu.classList.toggle("active");
+});
+// ? Menu Exit Button
+exitIcon.addEventListener("click", () => {
+	menu.classList.toggle("active");
+});
+// ? Search Icon
+searchIconTwo.addEventListener("click", () => {
+	searchBar.classList.toggle("active");
+	searchIconTwo.classList.toggle("active");
+	closeSearchBar.classList.toggle("active");
+});
+// ? Close Search Bar
+searchIconThree.addEventListener("click", () => {
+	searchBar.classList.toggle("active");
+	searchIconTwo.classList.toggle("active");
+	closeSearchBar.classList.toggle("active");
+});
+closeSearchBar.addEventListener("click", () => {
+	searchIconTwo.classList.toggle("active");
+	searchBar.classList.toggle("active");
+	closeSearchBar.classList.toggle("active");
+});
+
+// ? Function Alert
+function alertClose() {
+	alertBox.classList.toggle("active");
+	fetchNews("India");
 }
